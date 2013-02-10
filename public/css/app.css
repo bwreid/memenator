@@ -1,0 +1,107 @@
+/* Artfully masterminded by ZURB  */
+@import url(http://fonts.googleapis.com/css?family=Montez);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+
+/* --------------------------------------------------
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+body {
+    background: url('http://subtlepatterns.com/patterns/subtle_grunge.png') repeat;
+}
+
+.row:nth-child(n+3) {
+    background-color: #fff;
+}
+
+.headtext {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.headtext > h1 {
+    color: #2ba6cb;
+    font-size: 4em;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+
+.headtext > h1 > span {
+    font-family: 'Montez', cursive;
+    text-transform: lowercase;
+    font-size: 1em;
+    color: #333;
+    position: relative;
+    top: -3px;
+    right: -10px;
+    z-index: -1;
+}
+
+.headtext > h2 {
+    margin-top: -10px;
+    font-size: 2em;
+    color: #aaa;
+    font-weight: 400;
+    text-transform: lowercase;
+}
+
+.dash {
+    margin: 0px 0px 8px 4px;
+}
+
+.dash form {
+  display: none;
+}
+
+.round.label {
+    left: -20px;
+    top: -5px;
+}
+
+.panel span {
+    font-style: italic;
+    color: #2ba6cb;
+}
+
+.dash a {
+    color: #222;
+    text-decoration: none;
+    line-height: inherit;
+    -webkit-transition: color 0.2s linear;
+    -moz-transition: color 0.2s linear;
+    -o-transition: color 0.2s linear;
+    transition: color 0.2s linear;
+}
+
+a:hover {
+    color: #2ba6cb;
+}
+
+a.remove:hover {
+    color: #CB2B2B;
+}
+
+a.heart:hover {
+    color: #CB2B80;
+}
+
+a.star-f:hover {
+    color: #E6E617;
+}
+
+a.star-t {
+    color: #E6E617;
+}
+
+h4.title {
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+}
+
+h4.lead:first-child {
+    font-size: 2.5em;
+}
+

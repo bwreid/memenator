@@ -1,0 +1,22 @@
+<form class='custom' method='post' action='<%= @row.nil? ? "create" : "/video/#{@row['id']}" %>'>
+  <label>Video Title</label>
+  <input value='<%= @row['title'] if @row %>' type='text' placeholder='title' onfocus="this.placeholder = ''" name='title'>
+  <label>Description</label>
+  <textarea rows=4 type='text' placeholder='description' onfocus="this.placeholder = ''" name='description'><%= @row['description'] if @row %></textarea>
+  <label>Video URL</label>
+  <input value='<%= @row['vid_url'] if @row %>' type='text' placeholder='video url' onfocus="this.placeholder = ''" name='vid_url'>
+  <div class="row">
+    <div class="six columns">
+      <label for="animation"><input type="checkbox" <%= "CHECKED" if (@row) && (@row['genre'].include? "animation") %> name="animation"> Animation </label>
+      <label for="artsy"><input type="checkbox" <%= "CHECKED" if (@row) && (@row['genre'].include? "artsy") %> name="artsy"> Artsy </label>
+      <label for="beautiful"><input type="checkbox" <%= "CHECKED" if (@row) && (@row['genre'].include? "beautiful") %> name="beautiful"> Beautiful </label>
+    </div>
+    <div class="six columns">
+      <label for="emotional"><input type="checkbox" <%= "CHECKED" if (@row) && (@row['genre'].include? "emotional") %> name="emotional"> Emotional </label>
+      <label for="funny"><input type="checkbox" <%= "CHECKED" if (@row) && (@row['genre'].include? "funny") %> name="funny"> Funny </label>
+      <label for="indie"><input type="checkbox" <%= "CHECKED" if (@row) && (@row['genre'].include? "indie") %> name="indie"> Indie </label>
+    </div>
+  </div>
+  <hr />
+    <button class="large button"><%= @row.nil? ? "Add Video" : "Edit Video" %></button>
+</form>

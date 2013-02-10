@@ -1,0 +1,42 @@
+<% count = @rows.count %>
+<% odd = true if count.odd? %>
+<% @rows.each do |row| %>
+<% @dash = row %>
+<% if odd == true %>
+<div class="row">
+  <div class="twelve columns">
+    <h4 class='title lead'><%= row['title'] %></h4>
+    <div class="row">
+      <div class="twelve columns">
+        <% @video = row['vid_url'] %>
+        <%= erb :vimeo %>
+        <%= erb :dashboard %>
+        <div class="panel">
+          <p><%= row['description'].gsub("*&","'") %> <%= "<span> #{row['genre']}</span>" if  row['genre'] != nil %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% count -= 1 %>
+<% odd = false %>
+<% else %>
+
+<%= "<div class='row vid'>" if count.even? %>
+<% count -= 1 %>
+  <div class="six columns">
+    <h4 class='title'><%= row['title'] %></h4>
+    <div class="row">
+      <div class="twelve columns">
+        <% @video = row['vid_url'] %>
+        <%= erb :vimeo %>
+        <%= erb :dashboard %>
+        <div class="panel">
+          <p><%= row['description'].gsub("*&","'") %> <%= "<span> #{row['genre']}</span>" if  row['genre'] != nil %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<%= "</div>" if count.even? %>
+<% end %>
+<% end %>

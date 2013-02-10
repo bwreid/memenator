@@ -1,0 +1,19 @@
+<h3 class="dash">
+  <!-- REMOVE -->
+  <form method="post" name="deleteHid<%= @dash['id'] %>" action='/video/<%= @dash['id'] %>/delete'></form>
+
+    <a class="remove" href="#" onClick="document.deleteHid<%= @dash['id'] %>.submit();return false"><i class="foundicon-remove"></i></a>
+
+  <!-- SETTINGS -->
+    <a class="settings" href="/video/<%= @dash['id'] %>/edit"><i class="foundicon-settings"></i></a>
+
+    <!-- STARRED -->
+    <form method="post" name="starHid<%= @dash['id'] %>" action='/video/<%= @dash['id'] %>/star'></form>
+    <a class="star-<%= @dash['star'].first %>" href="#" onClick="document.starHid<%= @dash['id'] %>.submit();return false"><i class="foundicon-star"></i></a>
+
+    <!-- FAV -->
+    <form method="post" name="favHid<%= @dash['id'] %>" action='/video/<%= @dash['id'] %>/fav'></form>
+    <a class="heart" href="#" onClick="document.favHid<%= @dash['id'] %>.submit();return false"><i class="foundicon-heart"></i></a>
+
+    <span class="round label"><%= @dash['fav'] %></span>
+</h3>

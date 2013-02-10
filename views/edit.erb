@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="twelve columns">
+    <h4 class='title lead'><%= @row['title'] %></h4>
+    <div class="row">
+      <div class="twelve columns">
+        <% @video = @row['vid_url'] %>
+        <%= erb :vimeo %>
+        <div class="panel">
+          <p><%= @row['description'].gsub("*&","'") %> <%= "<span> #{@row['genre']}</span>" if  @row['genre'] != nil %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="twelve columns">
+    <h4 class='title lead'>Edit this Video</h4>
+    <%= erb :new %>
+  </div>
+</div>
+
